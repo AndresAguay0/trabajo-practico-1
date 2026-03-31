@@ -1,1 +1,75 @@
 <!--RESERVA DE MESA-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realizar Reserva - Il Momo Cafeteria</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./assets/favicon/momo_img.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="menu-logo">
+        <img src="../assets/favicon/momo_img.png" alt="Il Momo Logo" />
+        <h1>Il Momo</h1>
+      </div>
+      <div id="menu-links">
+        <nav>
+          <a href="./index.html">Inicio</a>
+          <a href="./pages/servicios.html">Menú</a>
+          <a href="./pages/pedido.html">Realizar Reserva</a>
+          <a href="./pages/equipo.html">Equipo</a>
+          <a href="./pages/contacto.html">Contacto</a>
+          <a href="./pages/faq.html">Preguntas Frecuentes</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="form-reserva">
+        <h2>Realizar una Reserva</h2>
+        <form>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" name="apellido" required />
+
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" required />
+          <br /><br />
+          <label for="fecha">Fecha de la reserva</label>
+          <input type="date" id="fecha" name="fecha" required />
+
+          <label for="hora">Hora de la reserva</label>
+          <input type="time" id="hora" name="hora" required />
+          <br />
+          <label for="personas">Número de personas</label>
+          <input
+            type="number"
+            id="personas"
+            name="personas"
+            min="1"
+            max="10"
+            required
+          />
+          <br /><br />
+          <label for="comentarios">Detalles de la reserva</label>
+          <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+          <br /><br />
+          <button type="submit">Enviar detalles</button>
+          <button type="reset">Limpiar formulario</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright &copy; 2024 Il Momo. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>
