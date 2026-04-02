@@ -8,9 +8,9 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="./assets/favicon/momo_img.png"
+      href="../assets/favicon/momo_img.png"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <header>
@@ -21,7 +21,7 @@
       <div id="menu-links">
         <nav>
           <a href="../index.html">Inicio</a>
-          <a href="../pages/servicios.html">Menú</a>
+          <a href="../pages/servicios.html">Servicios</a>
           <a href="../pages/pedido.html">Realizar Reserva</a>
           <a href="../pages/equipo.html">Equipo</a>
           <a href="../pages/contacto.html">Contacto</a>
@@ -48,7 +48,19 @@
 
           <label for="hora">Hora de la reserva</label>
           <input type="time" id="hora" name="hora" required />
-          <br />
+
+          <p>Tipo de Reserva</p>
+
+          <input type="radio" id="mesa-estandar" name="tipo-reserva" />
+          <label for="mesa-estandar">Mesa Estandar</label>
+
+          <input type="radio" id="mesa-vip" name="tipo-reserva" />
+          <label for="mesa-vip">Mesa VIP</label>
+
+          <input type="radio" id="sector-cumpleaños" name="tipo-reserva" />
+          <label for="sector-cumpleaños">Sector Cumpleaños</label>
+
+          <br /><br />
           <label for="personas">Número de personas</label>
           <input
             type="number"
