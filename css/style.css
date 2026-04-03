@@ -9,7 +9,6 @@
 /* HEADER ESTILO */
 /* #region*/
 header {
-  
   display: flex;
   align-items: center;
   width: auto;
@@ -26,7 +25,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--c-dorado-hover)
+  color: var(--c-dorado-hover);
 }
 
 #menu-logo img {
@@ -37,6 +36,7 @@ nav a:hover {
 
 #menu-logo h1 {
   font-size: 48px;
+  color: var(--c-letras-titulo);
 }
 
 #menu-logo {
@@ -55,7 +55,8 @@ nav a:hover {
 
 /* MAIN ESTILO */
 /* #region*/
-html, body {
+html,
+body {
   background-color: var(--c-fondo-pagina);
   margin: 0;
 }
@@ -65,7 +66,7 @@ html, body {
   margin: 15px;
 }
 
-main{
+main {
   color: var(--c-letras-titulo);
 }
 
@@ -86,6 +87,70 @@ footer {
   width: 100%;
   text-align: center;
   background-color: var(--c-dorado-hover);
-  color: var(--c-fondo-pagina)
+  color: var(--c-fondo-pagina);
+}
+/* #endregion */
+
+/*CARD ESTILO EQUIPO*/
+/* #region */
+.section-header h1 {
+  margin: 20px;
+  color: var(--c-letras-titulo);
+  font-family: "playfairdisplay", serif;
+  text-align: center;
+  font-size: 36px;
+}
+
+.section-header p {
+  margin: 20px;
+  color: var(--c-letras-titulo);
+  font-family: "Helvetica", serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px; /* espacio entre tarjetas */
+  margin: 20px;
+}
+
+.card-equipo {
+  background-color: var(--c-fondo-header);
+  border: 2px solid var(--c-letras-titulo);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px auto;
+  width: 380px;
+}
+
+.card-equipo img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.card-equipo h1 {
+  font-family: "playfairdisplay", serif;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-equipo h2 {
+  font-family: "Helvetica", serif;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-equipo p {
+  font-family: "Helvetica", serif;
+  font-weight: normal;
+  text-align: center;
 }
 /* #endregion */
