@@ -1,7 +1,106 @@
 /* COLORES A USAR */
 :root {
-    --c-fondo-pagina: #fef6ee;
-    --c-letras-titulo: #452305;
-    --c-fondo-header: #c49673;
-    --c-dorado-hover: #8e5b1c;
+  --c-fondo-pagina: #fef6ee;
+  --c-letras-titulo: #452305;
+  --c-fondo-header: #c49673;
+  --c-dorado-hover: #8e5b1c;
 }
+
+/* HEADER ESTILO */
+/* #region*/
+header {
+  display: flex;
+  align-items: center;
+  width: auto;
+  background-color: var(--c-fondo-header);
+  border-bottom: 5px solid var(--c-dorado-hover);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--c-letras-titulo);
+  font-family: "playfairdisplay", serif;
+  font-weight: bold;
+  margin: 8px;
+}
+
+nav a:hover {
+  color: var(--c-dorado-hover);
+}
+
+#menu-logo img {
+  display: inline-block;
+  width: 220px;
+  vertical-align: middle;
+}
+
+#menu-logo h1 {
+  font-size: 48px;
+}
+
+#menu-logo {
+  display: flex;
+  align-items: center;
+}
+
+#menu-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  font-size: 18px;
+}
+/* #endregion */
+
+/* MAIN ESTILO */
+/* #region*/
+html,
+body {
+  background-color: var(--c-fondo-pagina);
+  margin: 0;
+}
+
+#index {
+  text-align: center;
+  margin: 15px;
+}
+
+main {
+  color: var(--c-letras-titulo);
+}
+
+main a {
+  text-decoration: none;
+  color: var(--c-letras-titulo);
+}
+
+main a:hover {
+  color: var(--c-dorado-hover);
+}
+/* #endregion */
+
+/* FOOTER ESTILO*/
+/* #region */
+footer {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: var(--c-dorado-hover);
+  color: var(--c-fondo-pagina);
+}
+/* #endregion */
+
+/* form-reserva de pedido.html */
+#form-reserva h2 {
+  font-size: 34px;
+}
+#form-reserva {
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+#reserva {
+  margin: 40px;
+}
+/* #endregion */
