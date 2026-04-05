@@ -32,15 +32,15 @@
         </header>
 
         <!--Contenido Principal-->
-        <main>
-            <section>
+        <main id="contacto">
+            <section id="form-reserva">
                 <h2>Realiza tu consulta</h2>
                 <p>
                     Estamos para ayudarte con cualquier duda o consulta que tengas.
                     <br/>
                     Para ponerte en contacto con nosotros, completá el siguiente formulario:
                 </p>
-                <form>
+                <form id="reserva">
                     <!--CAMPOS INICIALES-->
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required />
@@ -55,29 +55,44 @@
                     <input type="tel" id="telefono" name="telefono" />
 
                     <p>Motivo de la consulta:</p>
-
-                    <label for="consulta-producto">Productos</label>
+                    
                     <input type="radio" id="consulta-producto" name="motivo" required />
+                    <label for="consulta-producto">Productos</label>
+
+                    <br />
                     
-                    <label for="consulta-otro">| Otros</label>
                     <input type="radio" id="consulta-otro" name="motivo" required />
+                    <label for="consulta-otro">Otros</label>
                     
+                    <br />
+                    <br />
+
                     <!--OPCIONES-->
-                    <label for="servicio">| Servicio</label>
+                    <label for="servicio">Servicio</label>
                     <select id="servicio">
                         <option>Mesa para 1-4 personas</option>
                         <option>Sector preparado para cumpleaños</option>
                         <option>Mesa en terraza VIP</option>
                     </select>
 
+                    <br />
+                    <br />
+
                     <!--TEXT AREA-->
-                    <label for="mensaje">| Mensaje:</label>
+                    <label for="mensaje">Mensaje:</label>
+                    <br />
                     <textarea id="mensaje" name="mensaje" rows="5"></textarea>
 
-                    <label for="newsletter">| Quiero recibir novedades y promociones</label>
+                    <br />
+                    <br />
+
+                    <label for="newsletter">Quiero recibir novedades y promociones</label>
                     <input type="checkbox" id="newsletter" />
 
-                    <label for="enviar">| Enviar consulta:</label>
+                    <br />
+                    <br />
+
+                    <label for="enviar">Enviar consulta:</label>
                     <button type="submit" id="enviar">Enviar</button>
 
                     <!--BOTON RESET-->
