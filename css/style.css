@@ -154,3 +154,19 @@ footer {
   text-align: center;
 }
 /* #endregion */
+
+/* form-reserva de pedido.html */
+/* #region */
+#form-reserva h2 {
+  font-size: 34px;
+}
+#form-reserva {
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+#reserva {
+  margin: 40px;
+}
+/* #endregion */
