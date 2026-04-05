@@ -36,6 +36,7 @@ nav a:hover {
 
 #menu-logo h1 {
   font-size: 48px;
+  color: var(--c-letras-titulo);
 }
 
 #menu-logo {
@@ -90,7 +91,72 @@ footer {
 }
 /* #endregion */
 
+/*CARD ESTILO EQUIPO*/
+/* #region */
+.section-header h1 {
+  margin: 20px;
+  color: var(--c-letras-titulo);
+  font-family: "playfairdisplay", serif;
+  text-align: center;
+  font-size: 36px;
+}
+
+.section-header p {
+  margin: 20px;
+  color: var(--c-letras-titulo);
+  font-family: "Helvetica", serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px; /* espacio entre tarjetas */
+  margin: 20px;
+}
+
+.card-equipo {
+  background-color: var(--c-fondo-header);
+  border: 2px solid var(--c-letras-titulo);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px auto;
+  width: 380px;
+}
+
+.card-equipo img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.card-equipo h1 {
+  font-family: "playfairdisplay", serif;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-equipo h2 {
+  font-family: "Helvetica", serif;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-equipo p {
+  font-family: "Helvetica", serif;
+  font-weight: normal;
+  text-align: center;
+}
+/* #endregion */
+
 /* form-reserva de pedido.html */
+/* #region */
 #form-reserva h2 {
   font-size: 34px;
 }
