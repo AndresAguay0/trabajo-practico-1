@@ -148,6 +148,14 @@ footer {
   text-align: center;
 }
 
+.card-equipo h3 {
+  font-family: "Helvetica", serif;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: underline;
+}
+
 .card-equipo p {
   font-family: "Helvetica", serif;
   font-weight: normal;
