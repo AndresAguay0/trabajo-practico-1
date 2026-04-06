@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contacto - Il Momo Cafeteria</title>
+        
+        <!--Descripcion de busqueda-->
+        <meta name="descripcion" content="Contacto directo con Il Momo. ¡Estamos para ayudarte con cualquier duda que tengas!">
+        <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon/momo_img.png"/>
+
+        <!--Referencia al archivo de css-->
+        <link rel="stylesheet" href="../css/style.css"/>
+    </head>
+    <body>
+        <!--Cabecera de la pagina-->
+        <header>
+            <div id="menu-logo">
+                <img src="../assets/favicon/momo_img.png" alt="Il Momo Logo" />
+                <h1>IL MOMO - Cafetería</h1>
+            </div>
+            <div id="menu-links">
+                <nav>
+                <a href="../index.html">Inicio</a>
+                <a href="../pages/servicios.html">Servicios</a>
+                <a href="../pages/pedido.html">Reservar</a>
+                <a href="../pages/equipo.html">Equipo</a>
+                <a href="../pages/contacto.html">Contacto</a>
+                <a href="../pages/faq.html">Preguntas Frecuentes</a>
+                </nav>
+            </div>
+        </header>
+
+        <!--Contenido Principal-->
+        <main id="contacto">
+            <section id="form-reserva">
+                <h2>Realiza tu consulta</h2>
+                <p>
+                    Estamos para ayudarte con cualquier duda o consulta que tengas.
+                    <br/>
+                    Para ponerte en contacto con nosotros, completá el siguiente formulario:
+                </p>
+                <form id="reserva">
+                    <!--CAMPOS INICIALES-->
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required />
+
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required />
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" />
+
+                    <p>Motivo de la consulta:</p>
+                    
+                    <input type="radio" id="consulta-producto" name="motivo" required />
+                    <label for="consulta-producto">Productos</label>
+
+                    <br />
+                    
+                    <input type="radio" id="consulta-otro" name="motivo" required />
+                    <label for="consulta-otro">Otros</label>
+                    
+                    <br />
+                    <br />
+
+                    <!--OPCIONES-->
+                    <label for="servicio">Servicio</label>
+                    <select id="servicio">
+                        <option>Mesa para 1-4 personas</option>
+                        <option>Sector preparado para cumpleaños</option>
+                        <option>Mesa en terraza VIP</option>
+                    </select>
+
+                    <br />
+                    <br />
+
+                    <!--TEXT AREA-->
+                    <label for="mensaje">Mensaje:</label>
+                    <br />
+                    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+
+                    <br />
+                    <br />
+
+                    <label for="newsletter">Quiero recibir novedades y promociones</label>
+                    <input type="checkbox" id="newsletter" />
+
+                    <br />
+                    <br />
+
+                    <button type="submit" id="enviar">Enviar Consulta</button>
+
+                    <!--BOTON RESET-->
+                    <button type="reset" id="limpiar">Limpiar Datos</button>
+                </form>
+            </section>
+        </main>
+
+        <!--Pie de pagina-->
+        <footer>
+            <p>Copyright &copy; 2024 IL MOMO. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>
