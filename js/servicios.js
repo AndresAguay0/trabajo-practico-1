@@ -21,6 +21,23 @@ async function cargarServicios() {
         cardContainer.innerHTML = ""    // Eliminar el loader del html
 
         console.log(data)
+
+        data.forEach(servicio => {
+            const div = document.createElement("div")
+            div.classList.add("card")
+
+            // MEJORAR EL TEMA DE LA IMAGEN <------------------------------------------------------------
+            div.innerHTML = `
+                <div class="card-equipo">
+                    <img
+                        src="../assets/favicon/momo_img.png"
+                        alt="Logo de Il momo cafeteria"
+                    />
+                    <h3>${servicio.precio}</h3>
+                    <h3>${servicio.titulo}</h3>
+                </div>`
+
+        })
     } catch (error) {
         console.log(`Error. No se pudieron traer los datos de los servicios. ${error}`)
     }
