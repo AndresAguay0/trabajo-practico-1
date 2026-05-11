@@ -1,10 +1,9 @@
-const cardContainer = document.getElementById("card-container")
+const cardContainer = document.querySelector("#card-container")
 
 async function cargarServicios() {
     try {
-        if (!cardContainer) return
         
-        // Loader
+        if (!cardContainer) return
         cardContainer.innerHTML = `
             <div class="loader-container">
                 <div class="loader"></div>
@@ -24,21 +23,22 @@ async function cargarServicios() {
 
         data.forEach(servicio => {
             const div = document.createElement("div")
-            div.classList.add("card")
+            div.classList.add("card-equipo")
 
             // MEJORAR EL TEMA DE LA IMAGEN <------------------------------------------------------------
             div.innerHTML = `
-                <div class="card-equipo">
-                    <img
-                        src="../assets/favicon/momo_img.png"
-                        alt="Logo de Il momo cafeteria"
-                    />
-                    <h3>${servicio.precio}</h3>
-                    <h3>${servicio.titulo}</h3>
-                </div>`
+                <img
+                    src="../assets/favicon/momo_img.png"
+                    alt="Logo de Il momo cafeteria"
+                />
+                <h3>$${servicio.precio}</h3>
+                <h3>${servicio.titulo}</h3>`
 
+            cardContainer.append(div)
         })
     } catch (error) {
         console.log(`Error. No se pudieron traer los datos de los servicios. ${error}`)
     }
 }
+
+cargarServicios()
