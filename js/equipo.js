@@ -10,17 +10,15 @@ async function cargarEquipo() {
             </div>
         `;
 
-    const response = await fetch(
-      "https://trabajo-practico-3-back-end.onrender.com/equipo",
-    );
-    const data = await response.json();
+    const response = await fetch("http://localhost:3000/equipo");
+    const equipo = await response.json();
 
     cardContainer.innerHTML = ` `;
 
     console.log(response);
-    console.log(data);
+    console.log(equipo);
 
-    data.forEach((equipo) => {
+    equipo.forEach((equipo) => {
       const div = document.createElement("div");
       div.classList.add("card");
 
