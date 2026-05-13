@@ -99,7 +99,7 @@ async function servicioPorId(id) {
         cardContainer.append(div)
 
     } catch (error) {
-
+        console.log(`Error. No se pudieron traer los datos del servicio. ${error}`)
     }
 }
 
