@@ -28,8 +28,8 @@ async function cargarServicios() {
             // MEJORAR EL TEMA DE LA IMAGEN <------------------------------------------------------------
             div.innerHTML = `
                 <img
-                    src="../assets/favicon/momo_img.png"
-                    alt="Logo de Il momo cafeteria"
+                    src=${servicio.img}
+                    alt="Imagen del servicio"
                 />
                 <h3>$${servicio.precio}</h3>
                 <h3>${servicio.titulo}</h3>`
@@ -40,7 +40,7 @@ async function cargarServicios() {
             btnInfo.classList.add("btn-info")
 
             btnInfo.addEventListener("click", () => {
-                servicioPorId(servicio)
+                servicioPorId(servicio.id)
             })
 
             div.appendChild(btnInfo)
@@ -51,7 +51,7 @@ async function cargarServicios() {
     }
 }
 
-async function servicioPorId(servicio) {
+async function servicioPorId(id) {
 
     try {
         if (!cardContainer) return
@@ -65,21 +65,26 @@ async function servicioPorId(servicio) {
         
         // Buscar datos en el back-end
         console.log("- Buscando los datos del back-end -")
-        const response = await fetch(`http://localhost:3000/servicios/${servicio.id}`)
+        const response = await fetch(`http://localhost:3000/servicios/${id}`)
         
         // Guardar los datos como un json
-        const data = await response.json()
+        const servicio = await response.json()
 
         cardContainer.innerHTML = ""    // Eliminar el loader del html
 
-        console.log(data)
+        console.log(servicio)
 
         // CREO LOS DATOS PARA MOSTRARLOS
         const div = document.createElement("div")
             // MEJORAR EL TEMA DE LA IMAGEN <------------------------------------------------------------
         div.innerHTML = `
+            <img
+                src=${servicio.img}
+                alt="Imagen del servicio"
+            />
             <h3>${servicio.titulo}</h3>
-            <h3>$${servicio.precio}</h3>`
+            <h3>$${servicio.precio}</h3>
+            <p>${servicio.descripcion}</p>`
 
         // Boton de mas info
         const btnVolver = document.createElement("button")
