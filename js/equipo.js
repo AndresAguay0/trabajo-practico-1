@@ -10,7 +10,7 @@ async function cargarEquipo() {
             </div>
         `;
 
-    const response = await fetch("http://localhost:3000/equipo");
+    const response = await fetch("https://trabajo-practico-3-back-end.onrender.com/equipo");
     const equipo = await response.json();
 
     cardContainer.innerHTML = ` `;

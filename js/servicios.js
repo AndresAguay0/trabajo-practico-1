@@ -12,7 +12,7 @@ async function cargarServicios() {
     
         // Buscar datos en el back-end
         console.log("- Buscando los datos del back-end -")
-        const response = await fetch("http://localhost:3000/servicios")
+        const response = await fetch("https://trabajo-practico-3-back-end.onrender.com/servicios")
         
         // Guardar los datos como un json
         const data = await response.json()
@@ -65,7 +65,7 @@ async function servicioPorId(id) {
         
         // Buscar datos en el back-end
         console.log("- Buscando los datos del back-end -")
-        const response = await fetch(`http://localhost:3000/servicios/${id}`)
+        const response = await fetch(`https://trabajo-practico-3-back-end.onrender.com/servicios/${id}`)
         
         // Guardar los datos como un json
         const servicio = await response.json()
