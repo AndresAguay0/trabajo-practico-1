@@ -2,6 +2,13 @@ async function perfiles() {
 
     try {
 
+        if (!cardContainer) return
+        cardContainer.innerHTML = `
+            <div class="loader-container">
+                <div class="loader"></div>
+                <p>Obteniendo los datos. Por favor espere...</p>
+            </div>`  
+                  
         const response = await fetch("https://trabajo-practico-3-back-end.onrender.com/login");
 
         const data = await response.json();
