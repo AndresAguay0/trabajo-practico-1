@@ -76,12 +76,15 @@ async function servicioPorId(id) {
 
         // CREO LOS DATOS PARA MOSTRARLOS
         const div = document.createElement("div")
-            // MEJORAR EL TEMA DE LA IMAGEN <------------------------------------------------------------
+        div.classList.add("servicio-full")
+
         div.innerHTML = `
-            <img
-                src=${servicio.img}
-                alt="Imagen del servicio"
-            />
+            <div>
+                <img
+                    src=${servicio.img}
+                    alt="Imagen del servicio"
+                />
+            <div>
             <h3>${servicio.titulo}</h3>
             <h3>$${servicio.precio}</h3>
             <p>${servicio.descripcion}</p>`
@@ -89,7 +92,7 @@ async function servicioPorId(id) {
         // Boton de mas info
         const btnVolver = document.createElement("button")
         btnVolver.textContent = "Volver"
-        btnVolver.classList.add("btn-volver")
+        btnVolver.classList.add("btn-info")
 
         btnVolver.addEventListener("click", () => {
             cargarServicios()

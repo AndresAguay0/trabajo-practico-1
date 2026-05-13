@@ -205,3 +205,20 @@ footer {
     transform: rotate(360deg);
   }
 }
+
+/* Boton MAS INFO */
+.btn-info {
+  background-color: var(--c-fondo-pagina);
+  border-color: var(--c-letras-titulo);
+  color: var(--c-letras-titulo);
+}
+
+.btn-info:hover {
+  background-color: var(--c-dorado-hover);
+  color: var(--c-fondo-pagina);
+}
+
+.servicio-full img {
+  width: 250px;
+  height: 250px;
+}
