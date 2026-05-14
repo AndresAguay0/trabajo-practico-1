@@ -1,6 +1,6 @@
 const cardContainer = document.querySelector("#card-container");
 
-async function cargarLogin() {
+async function cargarPerfil() {
     try {
 
         if (!cardContainer) return
@@ -10,7 +10,7 @@ async function cargarLogin() {
                 <p>Obteniendo los datos. Por favor espere...</p>
             </div>`  
                   
-        const response = await fetch("https://trabajo-practico-3-back-end.onrender.com/login");
+        const response = await fetch("https://trabajo-practico-3-back-end.onrender.com/perfil");
 
         const data = await response.json();
         
@@ -43,4 +43,4 @@ async function cargarLogin() {
     }
 }
 
-cargarLogin();
+cargarPerfil();
