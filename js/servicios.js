@@ -25,7 +25,6 @@ async function cargarServicios() {
             const div = document.createElement("div")
             div.classList.add("card-equipo")
 
-            // MEJORAR EL TEMA DE LA IMAGEN <------------------------------------------------------------
             div.innerHTML = `
                 <img
                     src=${servicio.img}
