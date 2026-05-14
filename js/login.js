@@ -1,46 +1,28 @@
-const cardContainer = document.querySelector("#card-container");
+const form = document.querySelector('#login')
 
-async function cargarLogin() {
-    try {
+form.addEventListener('submit', async (e) => {
+  e.preventDefault()
 
-        if (!cardContainer) return
-        cardContainer.innerHTML = `
-            <div class="loader-container">
-                <div class="loader"></div>
-                <p>Obteniendo los datos. Por favor espere...</p>
-            </div>`  
-                  
-        const response = await fetch("https://trabajo-practico-3-back-end.onrender.com/login");
+  const mail = document.querySelector('#mail').value
+  const contrasena = document.querySelector('#contrasena').value
 
-        const data = await response.json();
-        
-        cardContainer.innerHTML = ""
-        
-        console.log(data);
+  try {
+    const response = await fetch('https://trabajo-practico-3-back-end.onrender.com/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mail, contrasena })
+    })
 
-        data.forEach((perfil) => {
+    if (response.ok) {
+      const perfil = await response.json()
+      console.log('Inicio de sesión exitoso:', perfil)
+      localStorage.setItem('idPerfil', perfil.id)
 
-            const div = document.createElement("div");
-
-            div.classList.add("card");
-
-            div.innerHTML = `
-                <img
-                    src=${perfil.foto} alt="Imagen del perfil"
-                />
-                <h2>${perfil.nombre}</h2>
-                <p>${perfil.mail}</p>
-                <p>${perfil.fechaRegistro}</p>
-                <ul>${perfil.ultimosPedidos}</ul>
-            `;
-
-            document.body.appendChild(div);
-        });
-
-    } catch {
-
-        console.log("Error, no se pudieron mostrar los datos del perfil.");
+      window.location.href = 'perfil.html'
+    } else {
+      alert('La contraseña y/o el usuario es/son incorrecto/s')
     }
-}
-
-cargarLogin();
+  } catch (error) {
+    console.error('Error en login:', error)
+  }
+})
