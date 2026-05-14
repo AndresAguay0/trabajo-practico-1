@@ -1,41 +1,48 @@
+const cardContainer = document.getElementById("card-container");
+
 async function perfiles() {
 
     try {
 
-        if (!cardContainer) return
+        if (!cardContainer) return;
+
         cardContainer.innerHTML = `
             <div class="loader-container">
                 <div class="loader"></div>
                 <p>Obteniendo los datos. Por favor espere...</p>
-            </div>`  
-                  
-        const response = await fetch("https://trabajo-practico-3-back-end.onrender.com/login");
+            </div>`;
 
+        const response = await fetch(
+            "https://trabajo-practico-3-back-end.onrender.com/perfil/1"
+        );
         const data = await response.json();
 
         console.log(data);
 
-        data.forEach((perfil) => {
+        cardContainer.innerHTML = "";
 
-            const div = document.createElement("div");
+        const div = document.createElement("div");
 
-            div.classList.add("card");
+        div.classList.add("card");
 
-            div.innerHTML = `
-                <img
-                    src=${perfil.foto} alt="Imagen del perfil"
-                />
-                <h2>${perfil.nombre}</h2>
-                <p>${perfil.mail}</p>
-                <p>${perfil.fechaRegistro}</p>
-                <ul>${perfil.ultimosPedidos}</ul>
-            `;
+        div.innerHTML = `
+            <img src="${data.foto}" alt="Imagen del perfil" />
+            <h2>${data.nombre}</h2>
+            <p>${data.mail}</p>
+            <p>${data.fechaRegistro}</p>
 
-            document.body.appendChild(div);
-        });
+            <ul>
+                ${data.ultimosPedidos
+                .map((pedido) => `<li>${pedido}</li>`)
+                .join("")}
+            </ul>
+        `;
 
-    } catch {
+        cardContainer.appendChild(div);
 
+    } catch (error) {
+
+        console.log(error);
         console.log("Error, no se pudieron mostrar los datos del perfil.");
     }
 }
