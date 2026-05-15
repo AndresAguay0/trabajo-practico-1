@@ -1,10 +1,10 @@
-const form = document.querySelector('#login')
+const form = document.querySelector('#formLogin')
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
 
-  const mail = document.querySelector('#mail').value
-  const contrasena = document.querySelector('#contrasena').value
+  const email = document.querySelector('#email').value
+  const contrasena = document.querySelector('#password').value
 
   try {
     const response = await fetch('https://trabajo-practico-3-back-end.onrender.com/login', {

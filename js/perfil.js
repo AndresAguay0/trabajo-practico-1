@@ -3,7 +3,7 @@ const cardContainer = document.querySelector("#card-container");
 async function perfil() {
   try {
     // Recuperar el id del usuario logueado
-    const id = localStorage.getItem("usuarioId");
+    const id = localStorage.getItem("idPerfil");
     if (!id) {
       alert("No hay usuario logueado");
       return;
@@ -34,5 +34,3 @@ async function perfil() {
     console.log(`Error, no se pudo traer el perfil. ${error}`);
   }
 }
-
-btnPerfil.addEventListener("click", perfil);
