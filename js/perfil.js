@@ -34,3 +34,5 @@ async function perfil() {
     console.log(`Error, no se pudo traer el perfil. ${error}`);
   }
 }
+
+perfil()
