@@ -1,50 +1,28 @@
-const cardContainer = document.getElementById("card-container");
+const form = document.querySelector('#formLogin')
 
-async function perfiles() {
+form.addEventListener('submit', async (e) => {
+  e.preventDefault()
 
-    try {
+  const email = document.querySelector('#email').value
+  const contrasena = document.querySelector('#password').value
 
-        if (!cardContainer) return;
+  try {
+    const response = await fetch('https://trabajo-practico-3-back-end.onrender.com/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mail, contrasena })
+    })
 
-        cardContainer.innerHTML = `
-            <div class="loader-container">
-                <div class="loader"></div>
-                <p>Obteniendo los datos. Por favor espere...</p>
-            </div>`;
+    if (response.ok) {
+      const perfil = await response.json()
+      console.log('Inicio de sesión exitoso:', perfil)
+      localStorage.setItem('idPerfil', perfil.id)
 
-        const response = await fetch(
-            "https://trabajo-practico-3-back-end.onrender.com/perfil/1"
-        );
-        const data = await response.json();
-
-        console.log(data);
-
-        cardContainer.innerHTML = "";
-
-        const div = document.createElement("div");
-
-        div.classList.add("card");
-
-        div.innerHTML = `
-            <img src="${data.foto}" alt="Imagen del perfil" />
-            <h2>${data.nombre}</h2>
-            <p>${data.mail}</p>
-            <p>${data.fechaRegistro}</p>
-
-            <ul>
-                ${data.ultimosPedidos
-                .map((pedido) => `<li>${pedido}</li>`)
-                .join("")}
-            </ul>
-        `;
-
-        cardContainer.appendChild(div);
-
-    } catch (error) {
-
-        console.log(error);
-        console.log("Error, no se pudieron mostrar los datos del perfil.");
+      window.location.href = 'perfil.html'
+    } else {
+      alert('La contraseña y/o el usuario es/son incorrecto/s')
     }
-}
-
-perfiles();
+  } catch (error) {
+    console.error('Error en login:', error)
+  }
+})
