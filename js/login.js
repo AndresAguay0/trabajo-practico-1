@@ -7,22 +7,36 @@ form.addEventListener('submit', async (e) => {
   const contrasena = document.querySelector('#password').value
 
   try {
-    const response = await fetch('https://trabajo-practico-3-back-end.onrender.com/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mail, contrasena })
-    })
+    const response = await fetch(
+      'https://trabajo-practico-3-back-end.onrender.com/login',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          mail: email,
+          contrasena
+        })
+      }
+    )
 
-    if (response.ok) {
-      const perfil = await response.json()
-      console.log('Inicio de sesión exitoso:', perfil)
-      localStorage.setItem('idPerfil', perfil.id)
+    const data = await response.json()
 
-      window.location.href = 'perfil.html'
-    } else {
-      alert('La contraseña y/o el usuario es/son incorrecto/s')
+    if (!response.ok) {
+      throw new Error(data.error || 'Error en el login')
     }
+
+    console.log('Login exitoso:', data)
+
+    // guardar id del usuario
+    localStorage.setItem('idPerfil', data.id)
+
+    // redireccionar
+    window.location.href = './perfil.html'
+
   } catch (error) {
-    console.error('Error en login:', error)
+    console.error(error)
+    alert(error.message)
   }
 })
