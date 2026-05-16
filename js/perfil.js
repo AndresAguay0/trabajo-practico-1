@@ -24,19 +24,22 @@ async function perfil() {
     const div = document.createElement("div");
 
     div.innerHTML = `
-      <img src="${perfil.foto}" alt="Imagen del perfil"/>
+      <div class= cardPerfil>
+        <img src="${perfil.foto}" alt="Imagen del perfil"/>
 
-      <h2>${perfil.nombre}</h2>
+        <h2>${perfil.nombre}</h2>
 
-      <p>${perfil.mail}</p>
+        <p>Mail: ${perfil.mail}</p>
 
-      <p>${perfil.fechaRegistro}</p>
+        <p>Fecha registro: ${perfil.fechaRegistro}</p>
 
-      <ul>
-        ${perfil.ultimosPedidos
-          .map((pedido) => `<li>${pedido}</li>`)
-          .join("")}
-      </ul>
+        <ul>
+          Ultimos pedidos:
+          ${perfil.ultimosPedidos
+            .map((pedido) => `<li>${pedido}</li>`)
+            .join("")}
+        </ul>
+      </div>
     `;
 
     cardContainer.append(div);
